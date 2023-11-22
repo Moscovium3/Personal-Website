@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    font-size: 0.8em;
+}
+img {
+    width: 800px; /* 调整图片的宽度 */
+    height: auto; /* 保持图片的纵横比 */
+}
+
+a {
+    color: blue; /* 链接的颜色 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+a:hover {
+    text-decoration: underline; /* 当鼠标悬停时添加下划线 */
+}
+footer {
+    font-size: 18px; /* 增加字体大小 */
+    background-color: #333; /* 暗色背景 */
+    color: #fff; /* 浅色字体 */
+    padding: 20px; /* 增加内边距 */
+    text-align: center; /* 居中对齐 */
+}
+
+footer a {
+    color: #4fa9f0; /* 链接的颜色 */
+    font-weight: bold; /* 加粗字体 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+footer a:hover {
+    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
