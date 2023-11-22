@@ -23,10 +23,23 @@ section {
 footer {
     font-size: 0.8em;
 }
-img {
-    width: 800px; /* 调整图片的宽度 */
-    height: auto; /* 保持图片的纵横比 */
+header, footer {
+    background-color: #f2f2f2; /* 轻灰色背景 */
+    color: #333; /* 深色字体 */
+    padding: 10px 0; /* 上下内边距 */
+    text-align: center; /* 文本居中 */
 }
+
+header a, footer a {
+    color: #0066cc; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
+    font-weight: bold; /* 加粗字体 */
+}
+
+header a:hover, footer a:hover {
+    text-decoration: underline; /* 鼠标悬停时下划线 */
+}
+
 
 a {
     color: blue; /* 链接的颜色 */
@@ -52,4 +65,60 @@ footer a {
 
 footer a:hover {
     text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
+.icon {
+    height: 100px;
+    width: 100px;
+    vertical-align: middle;
+}
+img {
+    width: 800px; /* 调整图片的宽度 */
+    height: auto; /* 保持图片的纵横比 */
+}
+.image-container {
+    text-align: center; /* 居中图片 */
+}
+
+.image-container img {
+    width: 80%; /* 或者您想要的宽度 */
+    max-width: 400px; /* 最大宽度，防止图片过大 */
+    margin-bottom: 30px; /* 图片之间的间距 */
+    display: block; /* 使img标签表现为块级元素 */
+    margin-left: auto; /* 结合display: block实现居中 */
+    margin-right: auto;
+}
+
+.image-container img:last-child {
+    margin-bottom: 0; /* 移除最后一张图片的底部间距 */
+}
+.about-me {
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #cccccc; /* 浅灰色边框 */
+    background-color: #fff8dc; /* 浅黄色背景 */
+    border-radius: 10px; /* 边框圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 轻微的阴影 */
+}
+#backToTopBtn {
+    display: none; /* 默认不显示 */
+    position: fixed; /* 固定位置 */
+    bottom: 20px; /* 页面底部位置 */
+    right: 30px; /* 页面右侧位置 */
+    z-index: 99; /* 确保按钮在其他元素之上 */
+    border: none; /* 无边框 */
+    outline: none; /* 无轮廓 */
+    background-color: #ddd; /* 背景色 */
+    color: black; /* 文字颜色 */
+    cursor: pointer; /* 鼠标样式 */
+    padding: 15px; /* 内边距 */
+    border-radius: 10px; /* 圆角 */
+}
+
+#backToTopBtn:hover {
+    background-color: #ccc; /* 悬停效果 */
 }
