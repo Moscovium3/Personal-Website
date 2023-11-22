@@ -1,5 +1,7 @@
 `Project Name: [Zhengying SUN personal website]`
 
+`License Reason`:I chose the MIT License for this project due to its simplicity and permissive nature, allowing others to freely use, modify, and distribute the project.
+
 `Overview`
 
 Welcome to the repository for [Your Project's Name]! This project is all about creating a personal/portfolio website to showcase my skills, projects, and professional journey. The aim is to provide a comprehensive view of my professional persona, highlighting my experiences, achievements, and interests.
