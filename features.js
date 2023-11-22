@@ -1,63 +1,53 @@
-// Execute when the document is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the header element
-    var header = document.querySelector('header');
-
-    // Change the background color when the mouse hovers over the header
-    header.addEventListener('mouseover', function() {
-        this.style.backgroundColor = 'lightblue'; // Background color when hovered
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
+});
 
-    // Restore the original background color when the mouse leaves
-    header.addEventListener('mouseout', function() {
-        this.style.backgroundColor = ''; // Remove the background color, revert to original CSS style
+// Image hover zoom effect for gallery images
+document.querySelectorAll('header img').forEach(img => {
+    img.addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.1)';
+        this.style.transition = 'transform 0.5s ease';
     });
+    img.addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
+    });
+});
 
-    // Create an element to display the time
-    var timeDisplay = document.createElement('div');
-    header.appendChild(timeDisplay);
+document.getElementById('myIcon').addEventListener('click', function() {
+    // 假设 alternate-icon.png 是点击后要显示的图标
+    var alternateIconPath = '/Users/sunzhengying/276_pw/duck.ico';
+    var originalIconPath = '/Users/sunzhengying/276_pw/cat.ico';
 
-    // Function to update the time
-    function updateTime() {
-        var currentTime = new Date();
-        timeDisplay.textContent = 'Current Time: ' + currentTime.toLocaleTimeString();
+    if (this.src.includes('cat.ico')) {
+        this.src = alternateIconPath;
+    } else {
+        this.src = originalIconPath;
     }
+});
 
-    // Update the time every second
-    setInterval(updateTime, 1000);
+// Dynamically create a 'Back to Top' button
+var backToTopBtn = document.createElement('button');
+backToTopBtn.innerHTML = 'Top';
+backToTopBtn.id = 'backToTopBtn';
+document.body.appendChild(backToTopBtn);
 
-    // Update the time immediately on first load
-    updateTime();
+// Show/hide the 'Back to Top' button based on scroll position
+window.onscroll = function() {
+    var topButton = document.getElementById('backToTopBtn');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topButton.style.display = 'block';
+    } else {
+        topButton.style.display = 'none';
+    }
+};
 
-    // Create an animation effect to display each letter of the title sequentially
-    var headerText = document.querySelector('header h1');
-    var letters = headerText.textContent.split('');
-    headerText.textContent = '';
-    letters.forEach(function(letter, index) {
-        var span = document.createElement('span');
-        span.textContent = letter;
-        span.style.opacity = '0';
-        headerText.appendChild(span);
-        setTimeout(function() {
-            span.style.opacity = '1';
-        }, 100 * index); // Each letter appears sequentially with a 100ms interval
-    });
-
-    // Add a feedback form
-    var feedbackForm = document.createElement('form');
-    feedbackForm.innerHTML = `
-        <h3>Contact Me</h3>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit">Send</button>
-    `;
-    document.body.appendChild(feedbackForm);
-
-    // Display a thank you message when the form is submitted
-    feedbackForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission behavior
-        alert('Thank you for your feedback!');
-        feedbackForm.reset(); // Reset the form
-    });
+// Scroll to top functionality
+backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
