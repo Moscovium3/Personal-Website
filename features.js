@@ -21,8 +21,8 @@ document.querySelectorAll('header img').forEach(img => {
 
 document.getElementById('myIcon').addEventListener('click', function() {
     // 假设 alternate-icon.png 是点击后要显示的图标
-    var alternateIconPath = '/Users/sunzhengying/276_pw/duck.ico';
-    var originalIconPath = '/Users/sunzhengying/276_pw/cat.ico';
+    var alternateIconPath = 'duck.ico';
+    var originalIconPath = 'cat.ico';
 
     if (this.src.includes('cat.ico')) {
         this.src = alternateIconPath;
